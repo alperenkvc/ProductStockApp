@@ -1,0 +1,24 @@
+﻿
+@model ProductStockApp.Models.Entity.CategoriesTable
+
+@{
+    ViewBag.Title = "GetCategory";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.CategoryID, "Kategori ID")
+                    @Html.TextBoxFor(m=>m.CategoryID, new {@class="form-control" })
+                    <br />
+                    @Html.LabelFor(m=>m.CategoryName, "Kategori Adı")
+                    @Html.TextBoxFor(m=> m.CategoryName, new {@class="form-control" })
+                </div>
+                <div>
+                    <button class="btn btn-warning">Kategori Güncelle</button>
+                </div>
+            }
+
+
+

@@ -1,0 +1,39 @@
+﻿
+@model ProductStockApp.Models.Entity.SalesTable
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Satış Yap
+</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Satış Yapma Ekranı</h2>
+            </div>
+            <form method="post" action="/Sales/NewSale">
+                <div class="modal-body">
+                    <label>Ürün adı</label>
+                    @Html.TextBoxFor(m => m.Product, new { @class = "form-control" })
+                    <br />
+                    <label>Müşteri Adı Soyadı</label>
+                    @Html.TextBoxFor(m => m.Client, new { @class = "form-control" })
+                    <br />
+                    <label>Adet</label>
+                    @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
+                    <br />
+                    <label>Fiyat</label>
+                    @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+                    <br />
+                    <button type="submit" class="btn btn-success">Satış İşlemini Yap</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

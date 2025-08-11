@@ -1,0 +1,23 @@
+﻿@model ProductStockApp.Models.Entity.ClientsTable
+@{
+    ViewBag.Title = "GetClient";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateClient", "Client", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.ClientID, "Müşteri ID")
+                    @Html.TextBoxFor(m=>m.ClientID, new {@class="form-control" })
+                    <br />
+                    @Html.LabelFor(m=>m.ClientName, "Müşterş Adı")
+                    @Html.TextBoxFor(m=>m.ClientName, new { @class = "form-control" })
+                    <br />
+                    @Html.LabelFor(m=>m.ClientSurname, "Müşteri Soyadı")
+                    @Html.TextBoxFor(m=>m.ClientSurname, new { @class = "form-control" })
+                </div>
+                <div>
+                    <button class="btn btn-warning">Müşteri Güncelle</button>
+                </div>
+            }
+

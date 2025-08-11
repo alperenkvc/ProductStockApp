@@ -1,0 +1,32 @@
+﻿@model ProductStockApp.Models.Entity.ProductsTable
+@{
+    ViewBag.Title = "GetProduct";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProductID, "Ürün ID")
+        @Html.TextBoxFor(m => m.ProductID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.ProductName, "Ürün Adı")
+        @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Brand, "Ürün Markası")
+        @Html.TextBoxFor(m => m.Brand, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.ProductCategory, "Ürün Kategorisi")
+        @*@Html.TextBoxFor(m => m.ProductCategory, new { @class = "form-control" })*@
+        @Html.DropDownListFor(m=>m.CategoriesTable.CategoryID, (List<SelectListItem>)ViewBag.Values, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Price, "Ürün Fiyatı")
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Amount, "Ürün Adedi")
+        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Ürün Güncelle</button>
+    </div>
+}

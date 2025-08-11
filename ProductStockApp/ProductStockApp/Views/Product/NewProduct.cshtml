@@ -1,0 +1,34 @@
+﻿
+@model ProductStockApp.Models.Entity.ProductsTable
+
+@{
+    ViewBag.Title = "NewProduct";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Ürün Adı</label>
+        <input type="text" name="ProductName" class="form-control" />
+    </div>
+    <div>
+        <label>Marka</label>
+        <input type="text" name="Brand" class="form-control"/>
+    </div>
+    <div>
+        <label>Ürün Kategori</label>
+        @Html.DropDownListFor(m => m.CategoriesTable.CategoryID, (List<SelectListItem>)ViewBag.Values, new {@class="form-control"})
+    <div>
+        <label>Fiyat</label>
+        <input type="text" name="Price" class="form-control"/>
+    </div>
+    <div>
+        <label>Stok</label>
+        <input type="text" name="Amount" class="form-control"/>
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ürün Ekle</button>
+    </div>
+</form>
+

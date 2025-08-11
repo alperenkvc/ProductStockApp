@@ -1,0 +1,29 @@
+﻿@model ProductStockApp.Models.Entity.ClientsTable
+
+@{
+    ViewBag.Title = "NewClient";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Müşteri Adı</label>
+        @Html.TextBoxFor(m => m.ClientName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ClientName, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Müşteri Soyadı</label>
+        @Html.TextBoxFor(m => m.ClientSurname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ClientSurname, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="add-client-button">Müşteri Ekle</button>
+    </div>
+</form>
+
+<script>
+    $('#add-client-button').click(() => {
+        alert("Müşteri başarıyla eklendi.");
+    });
+</script>
+
